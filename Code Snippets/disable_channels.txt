@@ -1,0 +1,1 @@
+curl -X PUT -d 'enabled=false' -H 'Authorization: Token token={API_KEY}' https://make.crowdflower.com/jobs/{JOB_ID}/settings/channels

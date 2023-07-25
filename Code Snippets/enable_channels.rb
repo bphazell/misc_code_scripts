@@ -1,0 +1,1 @@
+curl -X POST -d 'channels[]=dollarsgpt&channels[]=monabar&channels[]=piggybankgpt' https://api.crowdflower.com/v1/jobs/JOBID/channels?key=KEY

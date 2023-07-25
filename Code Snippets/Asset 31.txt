@@ -1,0 +1,43 @@
+1. Define the file path to indicate where you would like the new folders to populate.
+
+2. Pass two arguments when executing the script. The first will be client name and the second will be a project identifier (ig PN-400). These arguments can be strings so long as they are quoted.
+
+
+
+### Change path to preference############################
+Dir.chdir "Dropbox (CrowdFlower)/Bradley Johnson/Client"#
+#########################################################
+
+	clientName = ARGV[0]
+	projectNum = ARGV[1]
+	sub_folders = ["Deliverables", "Documentation", "Dump", "Fort Knox", "Images", "Results", "Scripts and Code", "Source Data From Client"]
+	resultsFolders = ["Production", "Spotcheck"]
+	sourceDataFolders = ["Formatted", "Raw"]
+
+	
+	if File.exists?(clientName) 
+		Dir.chdir clientName
+	else
+		Dir.mkdir(clientName)
+		Dir.chdir clientName
+	end
+
+	if File.exists?(projectNum) 
+		puts "ATTN: Project designation already exists. Rename and try again."
+		abort
+	else
+		Dir.mkdir(projectNum)
+	end
+	
+	Dir.chdir projectNum
+	sub_folders.each {|sub_folders| Dir.mkdir sub_folders}
+
+	Dir.chdir "Results"
+	resultsFolders.each {|resultsFolders| Dir.mkdir resultsFolders}
+
+	Dir.chdir "../Source Data From Client"
+	sourceDataFolders.each {|sourceDataFolders| Dir.mkdir sourceDataFolders}
+
+	puts "Successfully created cabinet for #{clientName}, #{projectNum}."
+
+

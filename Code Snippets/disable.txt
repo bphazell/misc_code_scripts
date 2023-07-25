@@ -1,0 +1,1 @@
+curl -H "Content-Type: application/json" -X PUT 'https://api.crowdflower.com/v1/jobs/JOB_ID/gold.json?key=YOUR_API_KEY' -d '{"reset": true}'

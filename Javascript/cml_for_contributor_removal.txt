@@ -1,0 +1,7 @@
+<cml:checkboxes validates="required" label="Sample checkboxes:" name="checkbox_name"> 
+  <cml:checkbox label="Checkbox 1" class="check_option{{_unit_id}}"/> 
+  <cml:checkbox label="Checkbox 2" class="check_option{{_unit_id}}"/> 
+  <cml:checkbox label="Checkbox 3" class="check_option{{_unit_id}}"/> 
+</cml:checkboxes>
+
+<cml:checkbox label="" name="hidden_check" class="dummy_check{{_unit_id}}"/>

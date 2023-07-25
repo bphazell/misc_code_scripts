@@ -1,0 +1,56 @@
+CML (CrowdFlower Markup Language)
+
+CML is CrowdFlower Markup Language, a set of tools for creating questions within the CrowdFlower Platform. CML is made up of helper tags, similar in format and syntax to standard HTML, which make defining forms to collect information from our labor pools quick and painless.
+
+While the built-in interactive form builder, otherwise known as the graphical editor, will automatically generate most of these helper tags for you, an understanding of CML will allow you to fully realize the utility of the platform.
+
+When building a task on CrowdFlower, CML and HTML will play nicely together, so long as you are aware of how you are combining the two. Additionally, it is possible to add styling such as bolding to your CML labels by using escape characters with your HTML tags.  However, this is the limit to which the two languages should be combined: it is not possible to nest HTML elements such as tables, buttons, and the like within CML elements.
+
+CML can be written inside the CML Editor in the Build Job section. Please take a look at <a>this article</a> for an introduction to the CML Editor.
+
+The following article will act as a guide, a collection of links to other articles in the Success Center that relate to building tasks on the platform. 
+
+
+Form Elements
+
+At the heart of CML are its helper tags, which enable the creation of CML Form Elements. The following is a list of all of the available Form Elements along with articles describing their use:
+
+	<a href="/Form Elements/cml-text/Form Element - Single Line Text Input - cml:text">cml:text</a> - Single Line Text Input
+
+	<a href="/Form Elements/cml-textarea/Form Element - Multi-line Text Input - cml:textarea">cml:textarea</a> - Multi-line Text Input
+
+	<a href="/Form Elements/cml-checkbox/Form Element - Single Checkbox - cml:checkbox">cml:checkbox</a> - Single Checkbox
+
+	<a href="/Form Elements/cml-checkboxes/Form Element - Multiple Related Checkboxes - cml:checkboxes">cml:checkboxes</a> - Multiple Related Checkboxes
+
+	<a href="/Form Elements/cml-radios/Form Element - Multiple Radio Buttons - cml:radios">cml:radios</a> - Multiple Radio Buttons
+
+	<a href="/Form Elements/cml-select/Form Element - Drop-down Menu - cml:select">cml:select</a> - Drop-down Menu
+
+	<a href="/Form Elements/cml-ratings/Form Element - Multiple Radios in a Single Line - cml:ratings">cml:ratings</a> - Multiple Radios in a Single Line
+
+	<a href="/Form Elements/cml-hours/Form Element - Hours of Operation Input Tool - cml:hours">cml:hours</a> - Hours of Operation Input Tool
+
+	<a href="/Form Elements/cml-taxonomy/Form Element - Advanced Tree Search and Input Tool - cml:taxonomy">cml:taxonomy</a> - Advanced Tree Search and Input Tool
+
+	<a href="/Form Elements/cml-image_annotation/Form Element - Image Annotation Tool - cml:image_annotation">cml:image_annotation</a> - Image Annotation Tool
+
+	<a href="/Form Elements/cml-hidden/Form Element - Hidden Form Field - cml:hidden">cml:hidden</a> - Hidden Form Field
+
+
+Meta Tags
+
+There are three additional helper tags that do not create new form elements but instead modify the behavior of existing elements that they are associated with:
+
+	<a href="/Meta Tags/cml-gold/Meta Tag - Define the Test Question Behavior for a Field - cml:gold">cml:gold</a> - Define the Test Question Behavior for a Field
+
+	<a href="/Meta Tags/cml-instructions/Meta Tag - Specify Instructions for a Field - cml:instructions">cml:instructions</a> - Specify Instructions for a Field
+
+	<a href="/Meta Tags/cml-group/Meta Tag - Group Related Form Elements Together - cml:group">cml:group</a> - Group Related Form Elements Together
+
+
+Attributes
+
+The behavior of Form Elements in your job can be modified through the use of various attributes added within the opening helper tag. 
+
+

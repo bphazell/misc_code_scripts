@@ -1,0 +1,1 @@
+http://crowdflower.com/jobs/[destination_job_id]/golds/copy/[source_job_id]

@@ -1,0 +1,76 @@
+
+
+# This funciton is used to remove a value that contradicts other values in an agg report . An example use case would be if you were using checkboxes with the following values:
+#     A) Blue
+#     B) Yellow
+#     C) Red
+#     D) NA
+
+# Because these are checkboxes, it is possible to recieve an aggregated output of 'Blue, NA'. This obiviously doesn't make sense. To solve this issue you can either 
+# add an implement an 'only-if' statement into your cml, (which depending on the scenario can cause more issues), or run this funciton!
+
+# This function evaluates every row that has a combination of 'NA' AND another value (like Blue), and removes the value that has the lowerest confidence value.
+# So for the provided example (Blue: confidence = .65 , NA: confidence = .54), this funciton will remove 'NA' leaving 'Blue' as the only value in the filed. 
+#
+
+#  Key
+
+# df = name of agg file 
+# column = the name of the cml question (as string)
+# subset = the name of the value that contradicts the other values in the cell (ex: 'not applicable', "none') (as string)
+# unique_id = the unique identifier that is neccessary to break up and paste back together the original data frame (as string)
+
+remove_nas <- function(df, column, subset, unique_id){
+  #reads original data frame
+  orig_df = df
+  orig_df$new_agg = ""
+  df$new_agg = ""
+  unique_id = as.character(unique_id)
+  unique_vector = orig_df[, unique_id]
+  subset = as.character(subset)
+  column = as.character(column)
+  column_vector = df[, column]
+  df = df[!(column_vector %in% subset),]
+  column_vector = df[, column]
+  df = df[grep(subset, column_vector),]
+  confidence = paste(column, ".confidence", sep = "")
+  column_vector = df[, column]
+  confidence_vector = df[, confidence]
+  for (i in 1:nrow(df)){
+    print(i)
+    confidence_num = as.numeric(unlist(strsplit(confidence_vector[i], "\n")))
+    value = unlist(strsplit(column_vector[i], "\n"))
+    
+      if(length(confidence_num) >= 2){
+
+        minimum = (min(confidence_num))
+        remove = value[which(confidence_num %in% minimum)]
+        new_value = value[!(value %in% remove)]
+        df$new_agg[i] = paste(new_value, collapse="\n")
+      }
+        else{
+          df$new_agg[i] = column_vector[i]
+      }
+         
+      }
+    mod_vector = df[,unique_id]
+    orig_df = orig_df[!(unique_vector %in% mod_vector),]
+    orig_df_vector = orig_df[, column]
+    orig_df$new_agg = orig_df_vector
+    df = rbind(orig_df, df)
+    return(df)
+  }
+  
+  Example = remove_nas(agg, "part1", "none", "conceptname")
+
+
+
+
+
+
+
+
+
+
+
+

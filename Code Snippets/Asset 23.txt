@@ -1,0 +1,8 @@
+/*Horizontal radio button questions for cml:radio in a cml:radios with class "horizontal" */
+
+.radios.horizontal .cml_row {
+  float: left;
+  width: 25%;
+}
+
+In this case, you only need to set the cml:radios to class="horizontal"

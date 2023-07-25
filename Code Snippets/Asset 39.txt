@@ -1,0 +1,1 @@
+curl -X PUT --data-urlencode 'job[options][req_ttl_in_seconds]=TIME_EXPIRATION_IN_SECONDS' 'https://api.crowdflower.com/v1/jobs/440716.json?key=KEY'

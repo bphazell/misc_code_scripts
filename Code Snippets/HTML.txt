@@ -1,0 +1,1 @@
+ <a target="www1" href="http://www.google.com/search?q={{name | urlencode}} OR {{simple_name | urlencode}} AND {{location | urlencode}}"><buttontype="button" class="btn btn-default" onclick="this.style.background='#F08A1D';">Company + Location Search</button></a>

@@ -1,0 +1,1 @@
+curl -X POST https://api.crowdflower.com/v1/jobs/{job_id}/units/{unit_id}/cancel.json?key={key}	

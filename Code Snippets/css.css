@@ -1,0 +1,7 @@
+.et-click-me {
+  box-shadow: 0 0 3px 3px #f05921;
+}
+
+.et-clicked {
+  box-shadow: 0 0 3px 3px #8cc63e;
+}

@@ -1,0 +1,18 @@
+<cml:taxonomy name="deal_categorization_corrected" label="Select only the MOST SPECIFIC PRIMARY category for the service that this deal provides by browsing or searching in the tool below:" src="serv_cat_english_usa" validates="required" search-src="https://crowdflower.com/taxonomies/show_client/serv_cat_english_usa.json" instructions="Select a maximum of 2 services ONLY when necessary. You will be REMOVED from the task if you select more than 2. (deselect by clicking on the 'x' next to the services listed beneath the tool)" multi-select="true" aggregation="agg" gold="true"></cml:taxonomy>
+
+Replace src with the language your task desires:
+serv_cat_portuguese-br
+serv_cat_italian
+serv_cat_spanish
+serv_cat_german
+serv_cat_english_usa
+serv_cat_french
+
+Replace 'search-src' with the language your task desires:
+
+https://crowdflower.com/taxonomies/show_client/serv_cat_portuguese-br.json
+https://crowdflower.com/taxonomies/show_client/serv_cat_italian.json
+https://crowdflower.com/taxonomies/show_client/serv_cat_spanish.json
+https://crowdflower.com/taxonomies/show_client/serv_cat_german.json
+https://crowdflower.com/taxonomies/show_client/serv_cat_english_usa.json
+https://crowdflower.com/taxonomies/show_client/serv_cat_french.json

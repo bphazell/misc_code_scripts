@@ -1,0 +1,21 @@
+ 
+
+
+ montage -geometry '1x1+0+0< montage img1split-0.jpg img1split-1.jpg img1split-2.jpg img1split-3.jpg img1split-4.jpg compiled_file.jpg compiled_file.jpg
+
+
+ -tile 5x5
+
+
+ montage -geometry +0+0 -background none *.jpg no_tile.jpg
+
+
+stack img1split-0.jpg img1split-1.jpg montag@e.jpg
+
+
+montage -mode concatenate -tile 5x5 *.jpg out.jpg
+
+
+
+convert \( img1split-0.jpg img1split-1.jpg img1split-2.jpg img1split-3.jpg img1split-4.jpg -append \) \
+\( img1split-5.jpg img1split-6.jpg img1split-7.jpg  -append \) +append result

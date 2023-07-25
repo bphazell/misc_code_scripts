@@ -1,0 +1,288 @@
+{% capture country_lower %}{{country | downcase}}{% endcapture %}
+
+{% case country_lower %}
+{% when 'afghanistan' %}
+{% assign c_code = 'com.af' %}
+{% when 'algeria' %}
+{% assign c_code = 'dz' %}
+{% when 'american samoa' %}
+{% assign c_code = 'as' %}
+{% when 'angola' %}
+{% assign c_code = 'it.ao' %}
+{% when 'antigua and barbuda' %}
+{% assign c_code = 'com.ag' %}
+{% when 'argentina' %}
+{% assign c_code = 'com.ar' %}
+{% when 'armenia' %}
+{% assign c_code = 'am' %}
+{% when 'australia' %}
+{% assign c_code = 'com.au' %}
+{% when 'austria' %}
+{% assign c_code = 'at' %}
+{% when 'azerbaijan' %}
+{% assign c_code = 'az' %}
+{% when 'bahamas' %}
+{% assign c_code = 'bs' %}
+{% when 'bahrain' %}
+{% assign c_code = 'com.bh' %}
+{% when 'bangladesh' %}
+{% assign c_code = 'com.bd' %}
+{% when 'belarus' %}
+{% assign c_code = 'com.by' %}
+{% when 'belgium' %}
+{% assign c_code = 'be' %}
+{% when 'belize' %}
+{% assign c_code = 'com.bz' %}
+{% when 'bolivia' %}
+{% assign c_code = 'com.bo' %}
+{% when 'bosnia and herzegovina' %}
+{% assign c_code = 'ba' %}
+{% when 'bosnia' %}
+{% assign c_code = 'ba' %}
+{% when 'botswana' %}
+{% assign c_code = 'co.bw' %}
+{% when 'brazil' %}
+{% assign c_code = 'com.br' %}
+{% when 'brunei' %}
+{% assign c_code = 'com.bn' %}
+{% when 'bulgaria' %}
+{% assign c_code = 'bg' %}
+{% when 'cambodia' %}
+{% assign c_code = 'com.kh' %}
+{% when 'canada' %}
+{% assign c_code = 'ca' %}
+{% when 'chile' %}
+{% assign c_code = 'cl' %}
+{% when 'china' %}
+{% assign c_code = 'com.hk' %}
+{% when 'colombia' %}
+{% assign c_code = 'com.co' %}
+{% when 'congo, democratic republic of the' %}
+{% assign c_code = 'cd' %}
+{% when 'congo' %}
+{% assign c_code = 'cg' %}
+{% when 'costa rica' %}
+{% assign c_code = 'co.cr' %}
+{% when 'cote d'ivoire' %}
+{% assign c_code = 'ci' %}
+{% when 'ivory coast' %}
+{% assign c_code = 'ci' %}
+{% when 'croatia' %}
+{% assign c_code = 'hr' %}
+{% when 'cuba' %}
+{% assign c_code = 'com.cu' %}
+{% when 'czech republic' %}
+{% assign c_code = 'cz' %}
+{% when 'denmark' %}
+{% assign c_code = 'dk' %}
+{% when 'dominican republic' %}
+{% assign c_code = 'com.do' %}
+{% when 'ecuador' %}
+{% assign c_code = 'com.ec' %}
+{% when 'egypt' %}
+{% assign c_code = 'com.eg' %}
+{% when 'el salvador' %}
+{% assign c_code = 'com.sv' %}
+{% when 'estonia' %}
+{% assign c_code = 'ee' %}
+{% when 'ethiopia' %}
+{% assign c_code = 'com.et' %}
+{% when 'fiji' %}
+{% assign c_code = 'com.fj' %}
+{% when 'finland' %}
+{% assign c_code = 'fi' %}
+{% when 'france' %}
+{% assign c_code = 'fr' %}
+{% when 'georgia' %}
+{% assign c_code = 'ge' %}
+{% when 'germany' %}
+{% assign c_code = 'de' %}
+{% when 'ghana' %}
+{% assign c_code = 'com.gh' %}
+{% when 'greece' %}
+{% assign c_code = 'gr' %}
+{% when 'guadeloupe' %}
+{% assign c_code = 'gp' %}
+{% when 'guatemala' %}
+{% assign c_code = 'com.gt' %}
+{% when 'guyana' %}
+{% assign c_code = 'gy' %}
+{% when 'haiti' %}
+{% assign c_code = 'ht' %}
+{% when 'honduras' %}
+{% assign c_code = 'hn' %}
+{% when 'hong kong' %}
+{% assign c_code = 'com.hk' %}
+{% when 'hungary' %}
+{% assign c_code = 'hu' %}
+{% when 'iceland' %}
+{% assign c_code = 'is' %}
+{% when 'india' %}
+{% assign c_code = 'co.in' %}
+{% when 'indonesia' %}
+{% assign c_code = 'co.id' %}
+{% when 'ireland' %}
+{% assign c_code = 'ie' %}
+{% when 'israel' %}
+{% assign c_code = 'co.il' %}
+{% when 'italy' %}
+{% assign c_code = 'it' %}
+{% when 'jamaica' %}
+{% assign c_code = 'com.jm' %}
+{% when 'japan' %}
+{% assign c_code = 'co.jp' %}
+{% when 'jordan' %}
+{% assign c_code = 'jo' %}
+{% when 'kazakhstan' %}
+{% assign c_code = 'kz' %}
+{% when 'kenya' %}
+{% assign c_code = 'co.ke' %}
+{% when 'korea, republic of' %}
+{% assign c_code = 'co.kr' %}
+{% when 'korea' %}
+{% assign c_code = 'co.kr' %}
+{% when 'kuwait' %}
+{% assign c_code = 'com.kw' %}
+{% when 'laos' %}
+{% assign c_code = 'la' %}
+{% when 'latvia' %}
+{% assign c_code = 'lv' %}
+{% when 'lebanon' %}
+{% assign c_code = 'com.lb' %}
+{% when 'lesotho' %}
+{% assign c_code = 'co.ls' %}
+{% when 'libya' %}
+{% assign c_code = 'com.ly' %}
+{% when 'lithuania' %}
+{% assign c_code = 'lt' %}
+{% when 'luxembourg' %}
+{% assign c_code = 'lu' %}
+{% when 'madagascar' %}
+{% assign c_code = 'mg' %}
+{% when 'malaysia' %}
+{% assign c_code = 'com.my' %}
+{% when 'maldives' %}
+{% assign c_code = 'mv' %}
+{% when 'malta' %}
+{% assign c_code = 'com.mt' %}
+{% when 'mauritius' %}
+{% assign c_code = 'mu' %}
+{% when 'mexico' %}
+{% assign c_code = 'com.mx' %}
+{% when 'moldova' %}
+{% assign c_code = 'md' %}
+{% when 'mongolia' %}
+{% assign c_code = 'mn' %}
+{% when 'montenegro' %}
+{% assign c_code = 'me' %}
+{% when 'morocco' %}
+{% assign c_code = 'co.ma' %}
+{% when 'mozambique' %}
+{% assign c_code = 'co.mz' %}
+{% when 'namibia' %}
+{% assign c_code = 'com.na' %}
+{% when 'nepal' %}
+{% assign c_code = 'com.np' %}
+{% when 'netherlands' %}
+{% assign c_code = 'nl' %}
+{% when 'new zealand' %}
+{% assign c_code = 'co.nz' %}
+{% when 'nicaragua' %}
+{% assign c_code = 'com.ni' %}
+{% when 'nigeria' %}
+{% assign c_code = 'com.ng' %}
+{% when 'norway' %}
+{% assign c_code = 'no' %}
+{% when 'oman' %}
+{% assign c_code = 'com.om' %}
+{% when 'pakistan' %}
+{% assign c_code = 'com.pk' %}
+{% when 'palestine' %}
+{% assign c_code = 'ps' %}
+{% when 'panama' %}
+{% assign c_code = 'com.pa' %}
+{% when 'paraguay' %}
+{% assign c_code = 'com.py' %}
+{% when 'peru' %}
+{% assign c_code = 'com.pe' %}
+{% when 'philippines' %}
+{% assign c_code = 'com.ph' %}
+{% when 'poland' %}
+{% assign c_code = 'pl' %}
+{% when 'portugal' %}
+{% assign c_code = 'pt' %}
+{% when 'puerto rico' %}
+{% assign c_code = 'com.pr' %}
+{% when 'qatar' %}
+{% assign c_code = 'com.qa' %}
+{% when 'romania' %}
+{% assign c_code = 'ro' %}
+{% when 'russia' %}
+{% assign c_code = 'ru' %}
+{% when 'russian federation' %}
+{% assign c_code = 'ru' %}
+{% when 'rwanda' %}
+{% assign c_code = 'rw' %}
+{% when 'san marino' %}
+{% assign c_code = 'sm' %}
+{% when 'saudi arabia' %}
+{% assign c_code = 'com.sa' %}
+{% when 'senegal' %}
+{% assign c_code = 'sn' %}
+{% when 'serbia' %}
+{% assign c_code = 'rs' %}
+{% when 'seychelles' %}
+{% assign c_code = 'sc' %}
+{% when 'singapore' %}
+{% assign c_code = 'com.sg' %}
+{% when 'slovakia' %}
+{% assign c_code = 'sk' %}
+{% when 'slovenia' %}
+{% assign c_code = 'si' %}
+{% when 'south africa' %}
+{% assign c_code = 'co.za' %}
+{% when 'south korea' %}
+{% assign c_code = 'co.kr' %}
+{% when 'spain' %}
+{% assign c_code = 'es' %}
+{% when 'sri lanka' %}
+{% assign c_code = 'lk' %}
+{% when 'sweden' %}
+{% assign c_code = 'se' %}
+{% when 'switzerland' %}
+{% assign c_code = 'ch' %}
+{% when 'taiwan' %}
+{% assign c_code = 'com.tw' %}
+{% when 'tanzania, united republic of' %}
+{% assign c_code = 'co.tz' %}
+{% when 'tanzania' %}
+{% assign c_code = 'co.tz' %}
+{% when 'thailand' %}
+{% assign c_code = 'co.th' %}
+{% when 'trinidad and tobago' %}
+{% assign c_code = 'tt' %}
+{% when 'turkey' %}
+{% assign c_code = 'com.tr' %}
+{% when 'uganda' %}
+{% assign c_code = 'co.ug' %}
+{% when 'ukraine' %}
+{% assign c_code = 'com.ua' %}
+{% when 'united arab emirates' %}
+{% assign c_code = 'ae' %}
+{% when 'united kingdom' %}
+{% assign c_code = 'co.uk' %}
+{% when 'united states' %}
+{% assign c_code = 'com' %}
+{% when 'uruguay' %}
+{% assign c_code = 'com.uy' %}
+{% when 'venezuela' %}
+{% assign c_code = 'co.ve' %}
+{% when 'vietnam' %}
+{% assign c_code = 'com.vn' %}
+{% when 'viet nam' %}
+{% assign c_code = 'com.vn' %}
+{% when 'virgin islands' %}
+{% assign c_code = 'co.vi' %}
+{% else %}
+{% assign c_code = 'com' %}
+{% endcase %}

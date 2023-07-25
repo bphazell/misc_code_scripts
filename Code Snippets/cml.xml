@@ -1,0 +1,7 @@
+<div class="url-list-wrapper-js"> 
+  <div class="hidden target_parent_urls-output-js">
+    {{urls}}
+  </div>
+  <div class="link-list-js">                
+  </div>
+</div>

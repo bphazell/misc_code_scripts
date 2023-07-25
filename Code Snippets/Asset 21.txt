@@ -1,0 +1,1 @@
+curl -X POST 'https://api.crowdflower.com/v1/jobs/{JOB_ID}/regenerate?type={TYPE}&key={APIKEY}'

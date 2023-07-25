@@ -1,0 +1,19 @@
+# replace "some-name" with what you want to call this branch.
+git checkout -b some-name
+
+# after you make some changes to the branch
+# you'll want to merge it back to the master
+
+git add .
+
+# stage all your changed code
+git commit -m "what you changed"
+
+# move to the master branch in order to merge into it
+git checkout master
+
+git merge some-name
+
+# you might want to push these changes to your remote git repository
+
+git push

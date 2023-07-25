@@ -1,0 +1,1 @@
+convert image.jpg  -crop 5x5@  +repage  +adjoin  imgsplit.jpg

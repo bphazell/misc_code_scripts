@@ -1,0 +1,60 @@
+<!-- Address Postal Codes Validators -->
+
+<!-- Australia and Swiss Postal Codes consist of 4 numbers>
+<!- Australia -->
+ validates="regex:'match'" 
+ data-validates-regex="^\d{4}$" 
+ data-validates-regex-flags="im"
+ data-validates-regex-message="Please enter a valid Australian postcode."
+
+<!-- Switzerland (message will be in German)-->
+validates="regex:'match'" 
+data-validates-regex="^\d{4}$" 
+data-validates-regex-flags="im"
+data-validates-regex-message="Bitte gib eine g&#xFC;ltige Postleitzahl ein"
+
+<!-- The Netherlands -->
+validates="clean:['trim'] regex:'match'" 
+data-validates-regex="^(\d{4}\s[A-Z]{2})$"
+data-validates-regex-flags="im" 
+data-validates-regex-message="Voer een postcode in het juiste formaat (1011 CH)."
+
+<!-- UK Postal Code -->
+validates="ukPostcode"
+
+<!-- Canada Postal Code -->
+validates="regex:'match'" 
+data-validates-regex="^[ABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Z]{1} *\d{1}[A-Z]{1}\d{1}$"
+data-validates-regex-flags="im" 
+data-validates-regex-message="Please enter a valid Canadian postcode."
+
+<!-- US, France, Italy, Spain, Germany all have 5 digit postal codes -->
+<!-- US -->
+validates="zipcode"
+
+<!-- Spain -->
+validates="regex:'match'"
+data-validates-regex="^\d{5}$" 
+data-validates-regex-flags="im" 
+data-validates-regex-message="Por favor introduzca un c&#xF3;digo postal v&#xE1;lido de Espa&#xF1;a."
+
+<!-- France -->
+validates="regex:'match'"
+data-validates-regex="^\d{5}$" 
+data-validates-regex-flags="im" 
+data-validates-regex-message="S il vous plait inserer un code postal valide"
+
+<!-- Italy -->
+validates="regex:'match'"
+data-validates-regex="^\d{5}$" 
+data-validates-regex-flags="im"
+data-validates-regex-message="Inserisci un codice postale valido"
+
+<!-- Germany -->
+validates="regex:'match'"
+data-validates-regex="^\d{5}$" 
+data-validates-regex-flags="im"
+data-validates-regex-message="Bitte gib eine g&#xFC;ltige Postleitzahl ein"
+
+
+

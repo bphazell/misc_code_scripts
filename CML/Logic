@@ -1,0 +1,118 @@
+Logic
+
+CML allows simple logic statements to attach the visibility of one or more form elements to the value of other fields via the [code]only-if[/code] attribute. [code]only-if[/code] logic is run when the fields that a given field depends on are validated (on element [code]blur[/code] and form [code]submit[/code]).
+
+Basic only-if selectors
+The easiest way to use an [code]only-if[/code] is to specify a different field's [code]name[/code] attribute:
+
+[code]
+<cml:text label="Enter an integer" name="enter_integer" validates="required integer" /> 
+<cml:text label="Describe the integer" name="describe_integer" only-if="enter_integer" validates="required" />
+[/code]
+
+In this example, the "Describe the integer" field will display only if the "Enter an integer" field passes all of its validators ([code]required[/code] and [code]integer[/code]).
+
+Overriding validators
+You can override a field's validators by using the following format: [code]only-if="field_name:validatorName"[/code]. 
+
+Example:
+[code]
+<cml:text label="Enter an integer" validates="required integer" /> 
+<cml:text label="Why did you enter letters?" only-if="enter_an_integer:alpha" validates="required" />
+[/code]
+
+In this case, the "Why did you enter letters?" field will display only when the "Enter an integer" field passes the [code]alpha[/code] validator.
+
+
+Indexed only-if selectors
+One of the most common uses of [code]only-if[/code] is to make the display of a field dependent on the [code]checked[/code] status of a specific radio button or checkbox or the [code]selectedIndex[/code] value of a select. You can do so using this format: [code]only-if="field_name:[index_number]"[/code] where "index_number" is a valid index integer.
+
+[code]
+<cml:select name="pick_number" label="Pick a number"> 
+<cml:option>One</cml:option> 
+<cml:option>Two</cml:option> 
+</cml:select> 
+
+<cml:text label="Why did you pick the first one?" only-if="pick_number:[0]" validates="required" />
+[/code]
+
+The above CML will require and display the "Why did you pick the first one?" text field only when the first option is selected in the "Pick a number" drop-down menu. The index value is 0-based. (i.e. The first element is "0", the second is "1", and so on.) Additionally, the "Why did you pick the first one?" field will be validated only when it is visible. Hidden fields do not run their validators on form [code]submit[/code].
+
+You can also use the input's value instead of an index number:
+
+[code]
+<cml:checkboxes label="Symptoms"> 
+<cml:checkbox value="breath" label="Shortness of breath" /> 
+<cml:checkbox value="hair" label="Hair loss" /> 
+</cml:checkboxes> 
+
+<cml:text label="Your hair is falling out?" only-if="symptoms:[hair]" validates="required" />
+[/code]
+
+"Or"
+"Or" logic can be used in indexed [code]only-if[/code] selectors. Use the pipe character "|" to specify an "or" relationship between values:
+
+[code]
+<cml:select label="Pick a number"> 
+<cml:option value="uno">One</cml:option> 
+<cml:option value="dos">Two</cml:option> 
+<cml:option value="tres">Three</cml:option> 
+<cml:option value="quattro">Four</cml:option> 
+</cml:select> 
+
+<cml:text label="Why did you pick an odd number?" only-if="pick_a_number:[0]||pick_a_number:[tres]" validates="required" />
+[/code]
+
+As shown above, you can mix index and value indices if desired.
+
+
+Complex only-if selectors
+CML only-if logic supports the following operators:
+<table>
+	<tr>
+		<th>Operator</th>
+		<th>Meaning</th>
+		<th>Associates</th>
+	</tr>
+	<tr>
+		<td>[code]++[/code]</td>
+		<td>and</td>
+		<td>Left-to-right</td>
+	</tr>
+	<tr>
+		<td>[code]||[/code]</td>
+		<td>or</td>
+		<td>Left-to-right</td>
+	</tr>
+	<tr>
+		<td>[code]![/code]</td>
+		<td>not</td>
+		<td>Right-to-left</td>
+	</tr>
+</table>
+
+For example
+[code]
+<cml:checkbox label="x" value="ex" ></cml:checkbox> 
+<cml:checkbox label="y" value="why" ></cml:checkbox> 
+<cml:checkbox label="z" value="zee" ></cml:checkbox> 
+
+<cml:text label="One of them is on." only-if="x:[ex]||y:[why]||z:[zee]" ></cml:text> 
+
+<cml:text label="All on!" only-if="x:[ex]++y:[why]++z:[zee]" ></cml:text> 
+
+<cml:text label="'ex' isn't selected." only-if="!x:[ex]" >
+</cml:text>
+[/code]
+
+Logic can only be used on multiple Form Elements without specifying it on every individual element. Take a look at this article on <a href="/Meta Tags/cml-group/Meta Tag - Group Related Form Elements Together - cml:group">cml:group</a>.
+
+
+
+
+
+
+
+
+
+

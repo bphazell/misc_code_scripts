@@ -1,0 +1,1 @@
+curl -X PUT 'https://crowdflower.com/jobs/[JOB_ID]/contributors/[CONTRIBUTOR_ID]/deflag?key=[API_KEY]&reason=[REASON]' -d'	

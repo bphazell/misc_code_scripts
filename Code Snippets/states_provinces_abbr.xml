@@ -1,0 +1,74 @@
+<cml:select label="" instructions="" name="" validates="required" gold="true" only-if="country_cf:[USA]">
+      <cml:option label="Alabama (AL)" value="AL"></cml:option>
+      <cml:option label="Alaska (AK)" value="AK"></cml:option>
+      <cml:option label="Arizona (AZ)" value="AZ"></cml:option>
+      <cml:option label="Arkansas (AR)" value="AR"></cml:option>
+      <cml:option label="California (CA)" value="CA"></cml:option>
+      <cml:option label="Colorado (CO)" value="CO"></cml:option>
+      <cml:option label="Connecticut (CT)" value="CT"></cml:option>
+      <cml:option label="Delaware (DE)" value="DE"></cml:option>
+      <cml:option label="Florida (FL)" value="FL"></cml:option>
+      <cml:option label="Georgia (GA)" value="GA"></cml:option>
+      <cml:option label="Hawaii (HI)" value="HI"></cml:option>
+      <cml:option label="Idaho (ID)" value="ID"></cml:option>
+      <cml:option label="Illinois (IL)" value="IL"></cml:option>
+      <cml:option label="Indiana (IN)" value="IN"></cml:option>
+      <cml:option label="Iowa (IA)" value="IA"></cml:option>
+      <cml:option label="Kansas (KS)" value="KS"></cml:option>
+      <cml:option label="Kentucky (KY)" value="KY"></cml:option>
+      <cml:option label="Louisiana (LA)" value="LA"></cml:option>
+      <cml:option label="Maine (ME)" value="ME"></cml:option>
+      <cml:option label="Maryland (MD)" value="MD"></cml:option>
+      <cml:option label="Massachusetts (MA)" value="MA"></cml:option>
+      <cml:option label="Michigan (MI)" value="MI"></cml:option>
+      <cml:option label="Minnesota (MN)" value="MN"></cml:option>
+      <cml:option label="Mississippi (MS)" value="MS"></cml:option>
+      <cml:option label="Missouri (MO)" value="MO"></cml:option>
+      <cml:option label="Montana (MT)" value="MT"></cml:option>
+      <cml:option label="Nebraska (NE)" value="NE"></cml:option>
+      <cml:option label="Nevada (NV)" value="NV"></cml:option>
+      <cml:option label="New Hampshire (NH)" value="NH"></cml:option>
+      <cml:option label="New Jersey (NJ)" value="NJ"></cml:option>
+      <cml:option label="New Mexico (NM)" value="NM"></cml:option>
+      <cml:option label="New York (NY)" value="NY"></cml:option>
+      <cml:option label="North Carolina (NC)" value="NC"></cml:option>
+      <cml:option label="North Dakota (ND)" value="ND"></cml:option>
+      <cml:option label="Ohio (OH)" value="OH"></cml:option>
+      <cml:option label="Oklahoma (OK)" value="OK"></cml:option>
+      <cml:option label="Oregon (OR)" value="OR"></cml:option>
+      <cml:option label="Pennsylvania (PA)" value="PA"></cml:option>
+      <cml:option label="Rhode Island (RI)" value="RI"></cml:option>
+      <cml:option label="South Carolina (SC)" value="SC"></cml:option>
+      <cml:option label="South Dakota (SD)" value="SD"></cml:option>
+      <cml:option label="Tennessee (TN)" value="TN"></cml:option>
+      <cml:option label="Texas (TX)" value="TX"></cml:option>
+      <cml:option label="Utah (UT)" value="UT"></cml:option>
+      <cml:option label="Vermont (VT)" value="VT"></cml:option>
+      <cml:option label="Virginia (VA)" value="VA"></cml:option>
+      <cml:option label="Washington (WA)" value="WA"></cml:option>
+      <cml:option label="Washington DC (District of Columbia)" value="DC"></cml:option>
+      <cml:option label="West Virginia (WV)" value="WV"></cml:option>
+      <cml:option label="Wisconsin (WI)" value="WI"></cml:option>
+      <cml:option label="Wyoming (WY)" value="WY"></cml:option>
+      <cml:option label="American Samoa" value="American Samoa"></cml:option>
+      <cml:option label="Colombia" value="Colombia"></cml:option>
+      <cml:option label="Guam" value="Guam"></cml:option>
+      <cml:option label="Minor Outlying Islands" value="Minor Outlying Islands"></cml:option>
+      <cml:option label="Northern Mariana Islands" value="Northern Mariana Islands"></cml:option>
+      <cml:option label="Parana" value="Parana"></cml:option>
+      <cml:option label="Puerto Rico (PR)" value="Puerto Rico"></cml:option>
+      <cml:option label="US Virgin Islands" value="US Virgin Islands"></cml:option>
+</cml:select>
+    
+<cml:select label="" instructions="" name="" validates="required" gold="true" only-if="country_cf:[Canada]">
+      <cml:option label="Alberta (AB)" value="Alberta"></cml:option>
+      <cml:option label="British Columbia (BC)" value="British Columbia"></cml:option>
+      <cml:option label="Manitoba (MB)" value="Manitoba"></cml:option>
+      <cml:option label="New Brunswick (NB)" value="New Brunswick"></cml:option>
+      <cml:option label="Newfoundland and Labrador (NL)" value="Newfoundland and Labrador"></cml:option>
+      <cml:option label="Nova Scotia (NS)" value="Nova Scotia"></cml:option>
+      <cml:option label="Ontario (ON)" value="Ontario"></cml:option>
+      <cml:option label="Prince Edward Island (PE)" value="Prince Edward Island"></cml:option>
+      <cml:option label="Quebec (QC)" value="Quebec"></cml:option>
+      <cml:option label="Saskatchewan (SK)" value="Saskatchewan"></cml:option>
+</cml:select>

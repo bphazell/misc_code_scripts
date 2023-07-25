@@ -1,0 +1,13 @@
+Form Element - Single Checkbox - cml:checkbox
+
+- Renders a single checkbox
+- Accepts all Common Attributes
+
+[code] <cml:checkbox label="A single checkbox" /> [/code]
+
+<img src="sample_checkbox.png" />
+
+Additional attributes
+
+[code] default [/code]
+If supplied, the value of this attribute will be submitted if the contributor does not check the checkbox. Otherwise, when the contributor checks the checkbox, the checkbox's value attribute will be submitted. In the absence of the [code]value[/code] attribute, the [code]label[/code] attribute will be submitted.

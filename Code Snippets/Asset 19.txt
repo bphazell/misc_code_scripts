@@ -1,0 +1,1 @@
+curl -X PUT --data-urlencode 'job[units_per_assignment]={n}' --data-urlencode 'key={auth_key}' https://api.crowdflower.com/v1/jobs/{job_id}.json

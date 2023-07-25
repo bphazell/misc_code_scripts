@@ -1,0 +1,48 @@
+<cml:select label="Select Timezone" name="corrected_tz2_sel" validates="required">
+    <cml:option label="Greenwich Mean Time" value="GMT" />
+    <cml:option label="Eastern Time" value="ET" />
+    <cml:option label="Mountain Time" value="MT" />
+    <cml:option label="Pacific Time" value="PT" />
+    <cml:option label="Central Time" value="CT" />
+    <cml:option label="United Kingdom Time" value="UKT" />
+    <cml:option label="Central European Time" value="CET" />
+    <cml:option label="Atlantic Time" value="AT" />
+    <cml:option label="Eastern European Time" value="EET" />
+    <cml:option label="Hong Kong Time" value="HKT" />
+    <cml:option label="Japan Time" value="JT" />
+    <cml:option label="Hawaii Time" value="HT" />
+    <cml:option label="Moscow Time" value="MSK" />
+    <cml:option label="China Time" value="CCT" />
+    <cml:option label="Australian Eastern Daylight Time" value="AEDT" />
+    <cml:option label="Australian Western Standard Time" value="AWST" />
+    <cml:option label="Brazil Zone 2 Time" value="BZT" />
+    <cml:option label="Chile Time" value="CLT" />
+    <cml:option label="South Africa Time" value="SAT" />
+    <cml:option label="Indian Standard Time" value="IST" />
+    <cml:option label="Pakistan Time" value="PFK" />
+    <cml:option label="Australian Central Daylight Time" value="ACDT" />
+    <cml:option label="Bangladesh Time " value="BT" />
+    <cml:option label="Myanmar Time" value="MMT" />
+    <cml:option label="Alaskan Time" value="AKT" />
+    <cml:option label="UAE Time" value="UAE" />
+    <cml:option label="Afghanistan Time" value="AFT" />
+    <cml:option label="Southeast Asia Time" value="SEAT" />
+    <cml:option label="Pacific Island Time" value="PIT" />
+    <cml:option label="New Zealand Time" value="NZT" />
+    <cml:option label="West African Time" value="WAT" />
+    <cml:option label="Australian Western Daylight Time" value="AWDT" />
+    <cml:option label="Australian Eastern Standard Time" value="AEST" />
+    <cml:option label="Australian Central Standard Time" value="ACST" />
+    <cml:option label="Beijing Standard Time" value="CST" />
+    <cml:option label="Shanghai Standard Time" value="SST" />
+    <cml:option label="Singapore Standard Time" value="SGT" />
+    <cml:option label="Indonesia West Standard Time" value="WIB" />
+    <cml:option label="Indonesia Central Standard Time" value="WITA" />
+    <cml:option label="Indonesia East Standard Time" value="WIT" />
+    <cml:option label="New Zealand Standard Time" value="NZST" />
+    <cml:option label="New Zealand Daylight Time" value="NZDT" />
+    <cml:option label="Pakistan Standard Time" value="PKST" />
+    <cml:option label="Taiwan Standard Time" value="TWT" />
+    <cml:option label="South Korea Standard Time" value="KST" />
+    <cml:option label="Thailand Standard Time" value="THA" />
+</cml:select>

@@ -1,0 +1,8 @@
+Form Element - Multiple Radios in a Single Line - cml:ratings
+
+- Renders a set of radio buttons in a single line for performing ratings
+- Accepts all Common Attributes
+
+[code] <cml:ratings label="Rate me" points="4" /> [/code]
+
+<img src="sample_ratings.png" />

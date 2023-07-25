@@ -1,0 +1,1 @@
+curl http://api.crowdflower.com/v1/jobs/{job_id}/pause.json?key={auth_key}

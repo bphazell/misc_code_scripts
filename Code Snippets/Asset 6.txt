@@ -1,0 +1,5 @@
+## BAN
+curl -H "Content-Length: 0" -X PUT 'https://api.crowdflower.com/v1/jobs/[JOB_ID]/workers/[CONTRIBUTOR_ID]/ban.json?key=[API_KEY]'
+
+## UNBAN
+curl -H "Content-Length: 0" -X PUT 'https://api.crowdflower.com/v1/jobs/[JOB_ID]/workers/[CONTRIBUTOR_ID]/deban.json?key=[API_KEY]'

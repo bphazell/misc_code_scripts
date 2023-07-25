@@ -1,0 +1,1 @@
+This means that their Contributor ID is associated with more than one auth central account.  Unfortunately a frequent problem.  We need to disassociate the incorrectly paired Contributor IDs. 

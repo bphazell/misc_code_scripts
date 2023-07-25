@@ -1,0 +1,8 @@
+select date_trunc('month',finished_at) as month, SUM(builder_conversions.amount) As cost_without_markup, pn_list.org_name
+from builder_jobs
+JOIN pn_list on pn_list.pn = builder_jobs.project_number
+JOIN builder_conversions on builder_conversions.job_id = builder_jobs.id
+WHERE builder_conversions.finished_at >= '2014-01-01'
+and builder_conversions.finished_at < '2015-01-01'
+GROUP BY month, pn_list.org_name
+order by pn_list.org_name

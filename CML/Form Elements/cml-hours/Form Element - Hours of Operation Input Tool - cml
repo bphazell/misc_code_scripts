@@ -1,0 +1,35 @@
+Form Element - Hours of Operation Input Tool - cml:hours
+
+- Renders a widget for inputting hours of operation for every day of the week
+- Accepts all Common Attributes except for [code]value[/code] and [code]default[/code]
+
+[code] <cml:hours label="When is this business open?" allowunlisted="true" /> [/code]
+
+<img src="sample_hours.png" />
+
+Note that [code]cml:hours[/code] is always required. If you do not want the field to be required, use CML Logic to hide the field if the contributor does not need to input anything.
+
+Additional attributes
+
+[code]allowunlisted[/code]
+- Defaults to "false"
+- If set to "true", the hours dropdowns will include a "Not listed" option that will allow contributors to specify that the hours of operation were not listed for that given day
+
+Returned columns
+[code]cml:hours[/code] returns the following columns for each day of the week ([code]mon[/code], [code]tue[/code], [code]wed[/code], [code]thu[/code], [code]fri[/code], [code]sat[/code], [code]sun[/code]):
+
+- [code]{field_name}_{day}_openallday[/code] - "TRUE" if the contributor selected "Open all day", "FALSE" otherwise
+
+- [code]{field_name}_{day}_closedallday[/code] - "TRUE" if the contributor selected "Closed all day", "FALSE" otherwise
+
+- [code]{field_name}_{day}_open_1[/code] - The first open time. One of several values:
+	
+	- "" - Nothing is submitted if the contributor chose "Open all day" or "Closed all day"
+	- "not_listed" - If "alowunlisted" is set to "true", contributors will have the option of selecting a "Not listed" option. This is the value that is submitted when this occurs.
+	- "##:##" - A time is submitted in 24-hour format. For example: "17:30" (5:30pm)
+
+- [code]{field_name}_{day}_close_1[/code] - The first close time. Same potential output values as the first open time.
+
+- [code]{field_name}_{day}_open_2[/code] - The second open time. Will be blank unless the contributor clicked "Add extra time range". Same potential output values as the first open time.
+
+- [code]{field_name}_{day}_close_2[/code] - The second close time. Will be blank unless the contributor clicked "Add extra time range". Same potential output values as the first open time.

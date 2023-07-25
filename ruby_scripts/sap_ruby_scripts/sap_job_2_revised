@@ -1,0 +1,148 @@
+require 'csv'
+
+input_csv = ARGV[0]
+
+master_hash = {}
+
+reader = CSV.readlines(input_csv, :headers=>true)
+
+output_name = "#{input_csv.gsub(/(\.csv)/,"")}"
+output_csv1 = "#{output_name}_postprocessed.csv"
+output_csv2 = "#{output_name}_for_pack.csv"
+
+input_headers = reader.headers
+BAD_HEADERS = ["_golden", "_canary", "_unit_state", "_trusted_judgments","_unit_id","_last_judgment_at", ":confidence", "_gold", "_gold_reason"]
+
+
+def good_header?(header)
+
+BAD_HEADERS.each do |bad_header|
+	return true if header.include?(bad_header)
+end
+end
+
+def sub_in_good_header_for_bad_header(input_headers) 
+	input_headers.each_with_object([]) do |input_header, output_headers|
+		if input_headers == "contact_url_text_add_worker_input"
+			output_headers << "contact_url_cf"
+		else 
+			output_headers << input_headers
+		end 
+	end
+end
+
+
+input_headers.reject! {|x| good_header?(x)}
+
+
+output_headers = sub_in_good_header_for_bad_header(input_headers)
+
+
+CSV.open(output_csv1, "w", headers:output_headers, :write_headers=>true) do |next_job|
+	CSV.open(output_csv2, "w", headers:output_headers, :write_headers=>true) do |pack|
+
+		CSV.foreach(input_csv, headers:true) do |row|
+			input_headers.each do |header|
+				master_hash[header] = row[header]
+			end
+
+			master_hash["contact_url_cf"] = master_hash["contact_url_text_add_worker_input"]
+			master_hash.delete("contact_url_text_add_worker_input")
+
+			if (master_hash["url_cf_verified2"] == "yes_verified") && (master_hash["contact_found"] == "no") && (master_hash["contact_url_cf"] != "")
+
+				next_job << master_hash.values
+			else
+				pack << master_hash.values
+			end
+
+		end
+
+
+	end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+# require 'csv'
+
+# input_file = ARGV[0]
+# output_name = "#{input_file.gsub(/(\.csv)/,"")}"
+
+# output_csv1 = "#{output_name}_postprocessed.csv"
+# output_csv2 = "#{output_name}_for_pack.csv"
+
+
+# reader = CSV.readlines(input_file, :headers=>true)
+
+# original_headers = reader.headers
+# headers_to_remove = ["_golden", "_canary", "_unit_state", "_trusted_judgments","_unit_id","_last_judgment_at"]
+# output_headers = []
+
+# original_headers.each do |head|
+# 	if !(headers_to_remove.include?(head) or head.end_with?("_gold") or head.end_with?("_gold_reason") or head.include?(":confidence"))
+# 		output_headers << head 
+
+# 	end
+# end
+
+
+
+# output_headers.each_with_index do |x, i|
+# 	if x != "contact_url_text_add_worker_input"
+# 		output_headers[i] = x
+# 		else
+# 			output_headers[i] = "contact_url_cf"
+			
+# 	end
+# end
+
+# puts output_headers
+
+
+# # CSV.open(output_csv1, "w", headers:new_headers, :write_headers=>true) do |next_job|
+# # 	CSV.open(output_csv2, "w", headers:new_headers, :write_headers=>true) do |pack|
+# # 		reader.each do |row|
+# # 			if (row["url_cf_verified2"] == "yes_verified") && (row["contact_found"] == "yes") && (row["contact_url_text_add_worker_input"] != "")
+# # 				for_output = []
+# # 				mod_headers.each do |name| 
+# # 					for_output << row[name]			
+# # 			end
+# # 			url_fix = row["contact_url_text_add_worker_input"]
+# # 			url_fix = url_fix.gsub("http://", "").prepend("http://")
+# # 			for_output << url_fix	
+# # 			next_job << for_output
+				
+# # 			end
+
+# # 			if row["url_cf_verified2"] == "no" 
+# # 				for_output = []
+# # 				mod_headers.each do |name|
+# # 				for_output << row[name]
+# # 			end
+# # 			pack << for_output
+# # 			end
+
+# # 			if row["url_cf_verified2"] == "yes_verified" and row["contact_found"] == "no"
+# # 				for_output = []
+# # 				mod_headers.each do |name|
+# # 					for_output << row[name]
+				
+# # 				end
+
+# # 				pack << for_output
+# # 			end
+
+# # end
+# # end
+# # end

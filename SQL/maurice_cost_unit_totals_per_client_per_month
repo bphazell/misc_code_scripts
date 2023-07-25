@@ -1,0 +1,20 @@
+with jobs as
+(
+select j.id job_id,u.email user_email,units_per_assignment,payment_cents,org_name
+from builder_jobs j
+join pn_list pnl on (j.project_number = pnl.PN)
+join builder_users  u on (u.id = j.user_id )
+)
+select
+      j.org_name
+      ,date_trunc('month',c.finished_at) month_begin_dt
+      ,sum(amount) as amount
+      ,sum(amount/(payment_cents*0.01)) as units
+      ,sum(judgments) as judgments_count
+from builder_conversions c
+join  jobs j on (c.job_id = j.job_id)
+Where
+c.external_type <> 'cf_internal'
+and c.finished_at >='2014-01-01' and c.finished_at <= '2014-12-31'
+group by 1,2
+order by 1

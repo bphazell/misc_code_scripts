@@ -1,0 +1,1 @@
+#curl -T 'sampledata.csv' -H 'Content-Type: text/csv' http://api.crowdflower.com/v1/jobs/upload.json?key={auth_key}

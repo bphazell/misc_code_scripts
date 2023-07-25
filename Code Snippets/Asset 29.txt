@@ -1,0 +1,12 @@
+      {% assign parsed_content = content | split: " "%}
+      {% for lines in parsed_content %}
+      {% if lines contains 'http' %}
+      <a href="{{lines}}" target="_blank">{{lines}}</a>
+      {% else %}
+      {{lines}}&#160;
+      {% endif %}
+      {% endfor %}
+      
+      
+      
+    

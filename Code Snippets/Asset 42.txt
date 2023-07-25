@@ -1,0 +1,14 @@
+/* Highlight radio button on hover */
+.radios.cml_field .cml_row label:hover {
+  background: #FAF8CC;
+}
+
+/* Bold radio text on hover */
+.radios.cml_field .cml_row label:hover { 
+  font-weight:bold;
+}
+
+/* Padding between radios, more customizable than using brs to pad between questions */
+.radios.cml_field .cml_row {
+  padding: 5px; 
+}

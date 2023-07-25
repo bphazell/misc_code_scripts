@@ -1,0 +1,18 @@
+// First, open up a terminal window that will always run in the background and type in:
+
+ssh -N -L {{port}}:localhost:5432 {{username}}@{{db}}.cloud.doloreslabs.com
+
+
+
+// run psql locally on your workstation to the SSH port you have forwarded using the "-L" flag
+// you must give ssh the "-N" flag to tell it not to try to give you a shell on the server
+
+// The only caviat is that the port may already be taken, so the first '5432' can be any number less than 65535 and greater than 1024.
+
+// This will set up a DB connection that stays open in the background.  Then open a new terminal window and type in:
+
+psql -h localhost -p {{port}} -U postgres builder 
+
+
+
+// where the {{port}} number is the number used above.

@@ -1,0 +1,65 @@
+
+require 'csv'
+require 'HTTParty'
+
+file = ARGV[0]
+
+t = Time.now
+date = t.strftime("%m_%d_%I%M%p")
+
+puts date
+
+csv = CSV.readlines(file,:headers=>true)
+
+headers = csv.headers
+
+output_file = "YP_scrape_results_#{date}.csv"
+
+#check if location data is present 
+
+def check_present (variable,place)
+	if place != nil
+		variable = place
+	else
+		variable = nil
+	end
+	return variable
+end
+
+def safe_parse(api, parse=true, attempt = 1)
+	api_url = HTTParty.get(api)
+	JSON.parse(api_url.body) if parse
+rescue => e 
+	if attempt > 10
+		puts "\n\nDEbug error: #{e}\n\n"
+		true_failure = true
+	else 
+		puts "\nREtrying #{api} because: \n\n#{e.message}\n"
+		sleep 2
+		safe_parse(api, parse, attempt +1)
+end
+end
+
+#reverse geocode lookup
+def reverse_geocode(lat,long)
+	reverse_geocoding = "http://api.geonames.org/findNearbyPostalCodesJSON?lat=#{lat}&lng=#{long}&username=imajenn&maxRows=1"
+	reverse_geocoding_results = HTTParty.get(reverse_geocoding)
+	reverse_geocoding_results=JSON.parse(reverse_geocoding_results.body)
+	if reverse_geocoding_results["statues"] != nil  || reverse_geocoding_results["postalCodes"].length == 0
+		reverse_geocoding="http://open.mapquestapi.com/nominatim/v1/reverse.php?format=json&lat=#{lat}&lon=#{long}"
+	  	reverse_geocoding_results=HTTParty.get(reverse_geocoding)
+	  	reverse_geocoding_results=JSON.parse(reverse_geocoding_results.body)
+	  	zip = reverse_geocoding_results["address"]["postcode"]
+  	elsif reverse_geocoding_results["postalCodes"].length > 0 
+  		zip = reverse_geocoding_results["postalCodes"][0]["postalCode"]
+  	else
+  		zip = nil
+  	end
+  	return zip
+  end
+
+
+
+
+
+

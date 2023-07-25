@@ -1,0 +1,21 @@
+Meta Tag - Group Related Form Elements Together - cml:group
+
+- Groups related fields together so that they can easily be hidden or shown with CML logic without writing [code]only-if[/code] attributes for every field
+
+[code]
+<cml:checkbox label="Show extra fields?" name="show_extras" />
+
+<cml:group only-if="!show_extras:unchecked"> 
+
+<cml:text label="Sample text field:" instructions="Enter text above" /> 
+
+<cml:checkboxes validates="required" label="Sample checkboxes:">
+<cml:checkbox label="Checkbox 1" /> 
+<cml:checkbox label="Checkbox 2" /> 
+<cml:checkbox label="Checkbox 3" /> 
+</cml:checkboxes> 
+
+</cml:group>
+[/code]
+
+In the above example, both the [code]cml:text[/code] and [code]cml:checkboxes[/code] elements will be hidden/shown depending on whether the [code]show_extras[/code] field passes the [code]checked[/code] validator

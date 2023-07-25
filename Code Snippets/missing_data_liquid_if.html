@@ -1,0 +1,5 @@
+{% if street != 'No data available' and street != '' and street != empty %}
+    <p>Street: {{street}}</p>
+{% else %}
+    <p>There is no street address for this record</p>
+{% endif %}

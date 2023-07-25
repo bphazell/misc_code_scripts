@@ -1,0 +1,41 @@
+# Navigate to your local copy in Terminal
+
+# Create an empty git repository or reinitialize an existing one
+git init   
+
+# You should get something like this:
+# "Reinitialized existing Git repository in /Users/your_account/your_folder/.git/"
+
+# Download new branches and data from a remote repository
+git fetch
+
+# Merge a branch context into your current one
+git merge origin master
+
+# At this point you should be adding stuff to your local directory. Then you can check the status of these files.
+# View the status of your files in the working directory and staging area. add a -s to see shorter output.
+git status -s
+
+# Adds file contents to the staging area
+git add [YOUR DIRECTORY OR FILE NAME]  
+
+# you can also do "git add ." to recursively add all files in a directory
+# "git add *" adds everything in the directory but it doesn't drill down into subdirectories
+
+git status -s
+
+# records a snapshot of the staging area
+git commit
+
+# add a -m with a commit message on the command line. 
+# if you leave it off, git will try to open a text editor to write the commit message in.
+# git commit -m "this is what i updated"
+
+# you can skip the "git add" step by using "git commit -a" 
+# which automatically stages all tracked, modified files before the commit
+
+# push your new branches and data to a remote repository
+# follows the format of "git push [alias] [branch]
+# in this case origin is the remote repository, and master is the local copy we just updated, 
+# which will update the corresponding branch in the remote repo
+git push origin master

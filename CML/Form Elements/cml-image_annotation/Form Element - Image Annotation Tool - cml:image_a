@@ -1,0 +1,99 @@
+Form Element - Image Annotation Tool - cml:image_annotation
+
+<img src="sample_image_annotation.png" />
+
+Declaring the CML Image Annotation Element
+[code]<cml:image_annotation> </cml:image_annotation>[/code]
+
+This CML tag renders an image and the corresponding tools for image annotation. There are four types of image annotation tools:
+
+	- Polygon
+	- Brush
+	- Dot
+	- Line
+
+The Polygon and Brush tools can be used together within the same job, as can the Dot and Line tools.
+
+The full declaration of each type of image annotation tool is shown below:
+
+Polygon and Brush
+[code]
+<cml:image_annotation name="ia" ia_tools="polygon brush" data_image_url="{{image_url}}" gold="true" matcher="overlap_score_matcher"></cml:image_annotation>
+[/code]
+
+Dot and Line
+[code]
+<cml:image_annotation name="ia" ia_tools="dot line" data_image_url="{{image_url}}" gold="true" matcher="greedy_point" aggregation="greedy_agg"></cml:image_annotation>
+[/code]
+
+CML Image Annotation Attributes
+
+	- Name the Tool
+	To define the name of the image annotation tool, use the [code]name[/code] attribute:
+	[code]
+	<cml:image_annotation name="image_annotation_instance"></cml:image_annotation>
+	[/code]
+
+	- Define the Tool Type
+	You can specify which annotation tool you wish to use by using the [code]ia_tools[/code] attribute:
+	[code]
+	<cml:image_annotation ia_tools="polygon brush"></cml:image_annotation> 
+	<cml:image_annotation ia_tools="polygon"></cml:image_annotation> 
+	<cml:image_annotation ia_tools="brush"></cml:image_annotation> 
+	<cml:image_annotation ia_tools="dot line"></cml:image_annotation> 
+	<cml:image_annotation ia_tools="dot"></cml:image_annotation> 
+	<cml:image_annotation ia_tools="line"></cml:image_annotation>
+	[/code]
+
+	- Define the Image to be Annotated
+	To define the data column that contains the URL of the image to be annotated, use the [code]data_image_url[/code] attribute.
+
+	[code]
+	<cml:image_annotation data_image_url="{{image_url}}"></cml:image_annotation>
+	[/code] 
+ 
+	- Enable Test Questions
+	To define whether test questions will be used for image annotation use the [code]gold[/code] attribute tag:
+
+	[code]
+	<cml:image_annotation gold="true"></cml:image_annotation> 
+	[/code]
+
+	- Define Matching Methodology
+	To define the method by which contributors' responses will be checked against test questions, use the [code]matcher[/code] attribute. The value of this field will be determined by the value you used for the [code]ia_tools[/code] attribute. Polygons and Brush use the "overlap_score_matcher" matcher. Dots and lines use the "greedy_point" matcher.
+
+	Note: Since Polygons and Brush use a different matcher than Dots and Lines, we do not support using the Polygons/Brush tool with the Dots/Lines tool in the same job.
+
+	Overlap Score Matcher
+
+	[code]
+	<cml:image_annotation ia_tools="polygon brush" gold="true" matcher="overlap_score_matcher"></cml:image_annotation>
+	[/code]
+
+	The "overlap_score_matcher" algorithm uses a single tolerance with values from 0 - 1, which represent the maximum acceptable shared ratio between two polygons for a match to occur.
+
+	Greedy Point Matcher
+
+	[code]
+	<cml:image_annotation ia_tools="dot line" gold="true" matcher="greedy_point"></cml:image_annotation>
+	[/code]
+
+	The greedy_point algorithm uses two tolerances for rigidness of matching:
+
+		- The point distance tolerance is the maximum acceptable distance in pixels between Dot/Line pairs.
+		- The point difference tolerance is the maximum acceptable difference between test question and judgment Dots/Lines.
+
+	Define Aggregation Methodology
+
+	To define the aggregation method use the [code]aggregation[/code] attribute. Dots and Lines use the "greedy_agg" method. The Polygon and Brush aggregator is outside the platform at the moment, so leave this attribute blank when using the Polygon/Brush tools.
+
+	[code]
+	<cml:image_annotation ia_tools="dot line" gold="true" aggregation="greedy_agg"></cml:image_annotation>
+	[/code]
+
+	[code]
+	<cml:image_annotation ia_tools="polygon brush"></cml:image_annotation> 
+	[/code]
+
+
+

@@ -1,0 +1,25 @@
+Form Element - Multiple Radio Buttons - cml:radios
+
+- Renders a group of radio buttons
+- Accepts all Common Attributes
+
+[code]
+<cml:radios label="Sample radio buttons:"> 
+<cml:radio label="Radio 1" /> 
+<cml:radio label="Radio 2" /> 
+<cml:radio label="Radio 3" /> 
+</cml:radios>
+[/code]
+
+<img src="sample_radios.png" />
+
+The [code]<cml:radio />[/code] children elements accept the following attributes:
+
+[code]checked[/code]
+If this attribute is "true", the child radio button will be pre-selected when the page loads.
+
+[code]label[/code]
+The visible label for the child radio button. This is different than the parent [code]<cml:radios>[/code] element's "label" attribute, which is the label for the entire group of radio buttons.
+
+[code]value[/code]
+The value that gets submitted if the contributor selects the corresponding child radio button. If this isn't present, the value of the "label" attribute is submitted.

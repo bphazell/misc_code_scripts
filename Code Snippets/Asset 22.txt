@@ -1,0 +1,5 @@
+http://translate.google.com/#origin_language_or_auto|destination_language|encoded_phrase
+
+For example, in this task (375195) I have links to translate names and product descriptions:
+
+<a href="http://translate.google.com/#de|en|{{name | urlencode}}" target="this_translate">Click here to translate the NAME</a>

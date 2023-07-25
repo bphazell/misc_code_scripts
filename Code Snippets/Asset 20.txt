@@ -1,0 +1,26 @@
+<table>            <-- This opens the table -->
+
+  <tr>             <-- <tr> adds a row to the table -->
+    <td></td>      <-- <td> is a unit of data in the row-->
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+  
+   <tr>
+    <td></td>
+    <td></td>
+  </tr>
+ 
+</table>            <-- This closes the table-->
+
+
+<-- So this table will have four rows wih two columns each-->

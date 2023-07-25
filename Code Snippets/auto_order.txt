@@ -1,0 +1,1 @@
+curl -X PUT --data-urlencode 'job[auto_order]=true' 'https://api.crowdflower.com/v1/jobs/{JOB_ID}.json?key={API_KEY}'

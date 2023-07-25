@@ -1,0 +1,9 @@
+# Open Terminal
+history
+
+# grep is a regex tool and in this example it searches the history 
+# to find entries that match the search term
+history | grep -i [SEARCH_TERM]
+
+# run an entry from the history results by putting an exclamation point before the number
+!475

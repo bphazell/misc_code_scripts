@@ -1,0 +1,2 @@
+# You can use your spotlight search from the command line
+mdfind -name [SEARCH_TERM]
